@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const connection = require("full path#");
+
 
 const app = express();
 app.use(express.urlencoded({
@@ -24,5 +26,9 @@ app.post('/api', function(req, res){
 
 app.listen(PORT, function() {
     console.log("Server is running on port " + PORT);
+    connection.connect(function(err){
+        if(err) throw err;
+        console.log("database is working")
+    })
 });
 
